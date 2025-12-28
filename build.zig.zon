@@ -1,0 +1,29 @@
+.{
+    .name = .openexr,
+    .version = "3.4.4",
+    .minimum_zig_version = "0.15.1",
+    .fingerprint = 0x766a7c9befb9992a,
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "OpenEXRConfig.h",
+        "OpenEXRConfigInternal.h",
+        "ImathConfig.h",
+        "IlmThreadConfig.h",
+        "internal_ht_stub.c",
+    },
+    .dependencies = .{
+        .openexr = .{
+            .url = "git+https://github.com/AcademySoftwareFoundation/openexr#v3.4.4",
+            .hash = "N-V-__8AAIczaAJQTH71SONdBqXa4ESeX4bxcDISt_qU13il",
+        },
+        .libdeflate = .{
+            .url = "git+https://github.com/ebiggers/libdeflate#v1.23",
+            .hash = "N-V-__8AAJSDCwCbJDrv-cgqEmKrpCF-4Lsdps2LXtpM97qN",
+        },
+        .imath = .{
+            .url = "git+https://github.com/AcademySoftwareFoundation/Imath#v3.2.1",
+            .hash = "N-V-__8AAMi8PgCDVpKShDvRJBx7KRmIlLA3Z7W0TkTApqkN",
+        },
+    },
+}

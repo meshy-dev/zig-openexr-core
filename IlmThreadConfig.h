@@ -1,0 +1,28 @@
+// Minimal IlmThreadConfig.h for zig-openexr
+// OpenEXRCore doesn't use threading directly
+
+#ifndef INCLUDED_ILMTHREAD_CONFIG_H
+#define INCLUDED_ILMTHREAD_CONFIG_H 1
+
+#pragma once
+
+#define ILMTHREAD_THREADING_ENABLED 0
+#define ILMTHREAD_HAVE_POSIX_SEMAPHORES 0
+#define ILMTHREAD_USE_TBB 0
+
+#define ILMTHREAD_INTERNAL_NAMESPACE_CUSTOM 0
+#define ILMTHREAD_INTERNAL_NAMESPACE IlmThread
+#define ILMTHREAD_NAMESPACE_CUSTOM 0
+#define ILMTHREAD_NAMESPACE IlmThread
+
+#if defined(__cplusplus) && (__cplusplus >= 201402L)
+#    define ILMTHREAD_DEPRECATED(msg) [[deprecated(msg)]]
+#elif defined(__GNUC__) || defined(__clang__)
+#    define ILMTHREAD_DEPRECATED(msg) __attribute__((deprecated(msg)))
+#elif defined(_MSC_VER)
+#    define ILMTHREAD_DEPRECATED(msg) __declspec(deprecated(msg))
+#else
+#    define ILMTHREAD_DEPRECATED(msg)
+#endif
+
+#endif // INCLUDED_ILMTHREAD_CONFIG_H
